@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power of Attorney (POA) – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Power of Attorney (POA) – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> A customer mentions they are working with a third party (law firm, debt settlement agency, or individual) to handle their loans.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ TCN Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Stop calls on TCN: 1 month</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Agent Portal</h2>
+        <ul>
+            <li><input type="checkbox"><span> No direct AP tool for POA unless third party is a lawyer</span></li>
+            <li><input type="checkbox"><span> If third party is a lawyer, remove all Notification Preferences (Phone, Email, SMS)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Power of Attorney (POA)</span></li>
+            <li><input type="checkbox"><span> Create a child case for each associated account</span></li>
+            <li><input type="checkbox"><span> Fill out Dynamic Fields:</span>
+                <ul>
+                    <li><input type="checkbox"><span> POA Relationship: [Based on what the customer shares]</span></li>
+                    <li><input type="checkbox"><span> Attorney Name: [If provided]</span></li>
+                    <li><input type="checkbox"><span> Contact Phone Number: [If provided]</span></li>
+                    <li><input type="checkbox"><span> Contacts Email Address: [If provided]</span></li>
+                    <li><input type="checkbox"><span> Team Verifying Customer: FO</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Summary of conversation and loans involved</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                    <li><input type="checkbox"><span> First Touch: Not Documentation Provided</span></li>
+                    <li><input type="checkbox"><span> First Touch Action: Recorded Available Information</span></li>
+                    <li><input type="checkbox"><span> Reassign Case to: Next Team</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Mordor Actions (Only if third party is a lawyer)</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Mordor &gt; Users &gt; Adjust User Collection</span></li>
+            <li><input type="checkbox"><span> Enter User ARI</span></li>
+            <li><input type="checkbox"><span> Under 'User Collection Status':</span>
+                <ul>
+                    <li><input type="checkbox"><span> Reason: Other</span></li>
+                    <li><input type="checkbox"><span> Comment: "POA – Case #[case number]"</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Click Update User Collection</span></li>
+            <li><input type="checkbox"><span> Repeat for each associated account</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📣 Customer Notification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Inform the customer that:</span>
+                <ul>
+                    <li><input type="checkbox"><span> A follow-up email will be sent within 3–5 business days</span></li>
+                    <li><input type="checkbox"><span> If their representative is a lawyer, all communications will stop and the lawyer must reach out directly to Affirm</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

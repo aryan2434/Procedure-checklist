@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Documents Request – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Loan Documents Request – Checklist</h1>
+    <div style="text-align:center; color:#444; font-size:1.05em; margin-bottom:18px;">(Includes Paper Statement, Loan Verification, and Truth in Lending Document Requests)</div>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> The customer requests a paper statement, loan verification document, or Truth in Lending (TILA) document for one or more loans.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📋 Offer Self-Service Option First</h2>
+        <ul>
+            <li><input type="checkbox"><span> Instruct the customer how to retrieve documents online or through the app:</span>
+                <ul>
+                    <li><b>Via Web:</b>
+                        <ul>
+                            <li><input type="checkbox"><span> Visit affirm.com and log in</span></li>
+                            <li><input type="checkbox"><span> Go to the Manage tab</span></li>
+                            <li><input type="checkbox"><span> Select the desired loan</span></li>
+                            <li><input type="checkbox"><span> Click on the Details tab</span></li>
+                            <li><input type="checkbox"><span> Select Loan Verification Document</span></li>
+                            <li><input type="checkbox"><span> Enable pop-ups to download the file</span></li>
+                        </ul>
+                    </li>
+                    <li><b>Via Mobile App:</b>
+                        <ul>
+                            <li><input type="checkbox"><span> Open the Affirm app</span></li>
+                            <li><input type="checkbox"><span> Navigate to the Manage tab</span></li>
+                            <li><input type="checkbox"><span> Tap the applicable loan</span></li>
+                            <li><input type="checkbox"><span> Go to the Details tab</span></li>
+                            <li><input type="checkbox"><span> Tap Loan Verification</span></li>
+                            <li><input type="checkbox"><span> Use the Share icon to download, print, or send the document</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation (If customer declines self-service or needs a physical copy)</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type based on request:</span>
+                <ul>
+                    <li><input type="checkbox"><span> For loan verification: Loan Verification Letter</span></li>
+                    <li><input type="checkbox"><span> For Truth in Lending: Purchase Terms and Agreement Document</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Fill out Dynamic Fields:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Product ID: [Loan ID from Agent Portal]</span></li>
+                    <li><input type="checkbox"><span> Request Completed: No</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Clearly state what the customer is requesting (e.g., "Customer requested Truth in Lending document for loan ID XXXXX")</span></li>
+                    <li><input type="checkbox"><span> If multiple loans are involved, list all Loan IDs in the Additional Comments</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Reassign Case to: Next Team</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📣 Customer Notification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Inform the customer:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Their document request has been submitted</span></li>
+                    <li><input type="checkbox"><span> They will receive the document(s) via email or mail (based on the method requested)</span></li>
+                    <li><input type="checkbox"><span> Allow up to a few business days for delivery</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s) if the request is related to a delinquent or disputed loan</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

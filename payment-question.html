@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Question – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Payment Question – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> The customer contacts Affirm with a question or concern related to a payment, including issues like failed payments, payment method problems, timeline discrepancies, charge-offs, or general payment FAQs.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Payment Question</span></li>
+            <li><input type="checkbox"><span> Fill out Dynamic Fields:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Product ID: [Loan ID]</span></li>
+                    <li><input type="checkbox"><span> Payment-related Question: Describe the specific payment issue discussed</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Provide relevant call details, including your name, date, and tag with "Coll Call" if applicable</span></li>
+                    <li><input type="checkbox"><span> Team Verifying Customer: FO</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                    <li><input type="checkbox"><span> First Touch Assessment: [Based on issue]</span></li>
+                    <li><input type="checkbox"><span> First Touch Action: If applicable: Review Blocked Payment to escalate</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Do not create child cases for associate accounts</span></li>
+            <li><input type="checkbox"><span> Reassign Case to: Next Team</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📣 Blocked Payment Escalation (if applicable)</h2>
+        <ul>
+            <li><input type="checkbox"><span> Ask the customer the following before escalating:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Is the payment instrument blocked by their bank?</span></li>
+                    <li><input type="checkbox"><span> Is the instrument in their name?</span></li>
+                    <li><input type="checkbox"><span> Is it authorized for use with Affirm?</span></li>
+                    <li><input type="checkbox"><span> Ask for the last 4 digits of the payment method</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> If all conditions are met, escalate using: Review Other → Review Blocked Payment</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

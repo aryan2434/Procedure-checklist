@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Party Handling – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Third Party Handling – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> A third party (not the account holder) is involved in the interaction, either to discuss the account or make a payment on behalf of the customer.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>👥 Determine Presence of the Account Holder</h2>
+        <ul>
+            <li><b>🟢 If the Account Holder is Present:</b>
+                <ul>
+                    <li><b>📞 If Third Party Wants to Discuss Account Info</b>
+                        <ul>
+                            <li><input type="checkbox"><span> Verify the account holder first and then ask: "Do I have your authorization to share specific information with this third party?"</span></li>
+                            <li><input type="checkbox"><span> Proceed only after verbal confirmation</span></li>
+                            <li><input type="checkbox"><span> Tell the third party that "You are on a recorded line."</span></li>
+
+                        </ul>
+                    </li>
+                    <li><b>💳 If Third Party is Making a Payment</b>
+                        <ul>
+                            <li><input type="checkbox"><span> Ask: "Are you the card holder and authorized user of this payment method?"</span></li>
+                            <li><input type="checkbox"><span> Read the Payment Disclosure Script to the third party (owner of the payment method)</span></li>
+                            <li><input type="checkbox"><span> Obtain verbal authorization to proceed</span></li>
+                            <li><input type="checkbox"><span> After payment is processed:</span>
+                                <ul>
+                                    <li><input type="checkbox"><span> Read Disclosure for Leaving Card on File:<br>"By leaving this payment method on file, you understand and agree that it will be available for use for future payments directed by the account holder..."</span></li>
+                                    <li><input type="checkbox"><span> If third party does NOT agree, remove the card after the payment is processed</span></li>
+                                </ul>
+                            </li>
+                            <li><input type="checkbox"><span> Never leave payment methods on file without authorization</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><b>🔴 If the Account Holder is NOT Present:</b>
+                <ul>
+                    <li><b>📞 If Third Party Wants to Discuss the Account</b>
+                        <ul>
+                            <li><input type="checkbox"><span> Politely state: "For the safety and security of our users, I cannot provide any account-specific information without the customer's consent."</span></li>
+                        </ul>
+                    </li>
+                    <li><b>💳 If Third Party Wants to Make a Payment</b>
+                        <ul>
+                            <li><input type="checkbox"><span> Ask the third party to provide:</span>
+                                <ul>
+                                    <li><input type="checkbox"><span> Account Holder's Full Name</span></li>
+                                    <li><input type="checkbox"><span> Loan ID</span></li>
+                                    <li><input type="checkbox"><span> Amount they wish to pay</span></li>
+                                    <li><input type="checkbox"><span> Confirmation they are the cardholder</span></li>
+                                </ul>
+                            </li>
+                            <li><input type="checkbox"><span> Confirm that the loan is not under bankruptcy</span></li>
+                            <li style="margin-left:32px;"><span style="color:#c00;">❌ If it is, say:<br>"We cannot accept a payment at this time. Please have the customer contact us directly for assistance."</span></li>
+                            <li><input type="checkbox"><span> Ask: "Are you the card holder and authorized user of this payment method?"</span></li>
+                            <li><input type="checkbox"><span> Read the Payment Disclosure Script on a recorded line</span></li>
+                            <li><input type="checkbox"><span> Ask them to state the exact amount they wish to pay</span></li>
+                            <li><input type="checkbox"><span> If payment is more than the loan balance, inform them that the system will not allow it, and suggest a lower amount without disclosing specifics</span></li>
+                            <li><input type="checkbox"><span> Process payment</span></li>
+                            <li><input type="checkbox"><span> Read the Disclosure to Remove Payment Info</span></li>
+                            <li><input type="checkbox"><span> Remove the payment method from Agent Portal (unless permission to leave on file is explicitly granted)</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🧾 Key Reminders</h2>
+        <ul>
+            <li><input type="checkbox"><span> Do NOT reveal:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Loan balances</span></li>
+                    <li><input type="checkbox"><span> Due dates</span></li>
+                    <li><input type="checkbox"><span> Any account activity</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Verification of account holder must be completed for any account-specific actions</span></li>
+            <li><input type="checkbox"><span> If using a third party's payment instrument, verbal authorization is always required</span></li>
+            <li><input type="checkbox"><span> Disclosures are mandatory for compliance</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case (if needed)</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create a Payment Question case only if:</span>
+                <ul>
+                    <li><input type="checkbox"><span> The third party disputes a transaction</span></li>
+                    <li><input type="checkbox"><span> There's a system issue</span></li>
+                    <li><input type="checkbox"><span> Further review is needed</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Add Notes: "Third party attempted/processed payment for [Loan ID], [summary of situation], [Your Name + Date]"</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s) only if interaction relates to payment issues, disputes, or follow-up actions</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attorney – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Attorney – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> Customer mentions they are represented by a lawyer (for any reason)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ TCN Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Stop calls on TCN: Never</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Agent Portal</h2>
+        <ul>
+            <li><input type="checkbox"><span> Remove all Notification Preferences (Phone, Email, SMS)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create a case type: Attorney</span></li>
+            <li><input type="checkbox"><span> Create a child case for each associated account</span></li>
+            <li>Fill out Dynamic Fields:
+                <ul>
+                    <li><input type="checkbox"><span> Contact is Account Holder: Yes</span></li>
+                    <li><input type="checkbox"><span> User Collections Updated: Disabled: Other</span></li>
+                    <li><input type="checkbox"><span> Additional Comments:</span></li>
+                    <li style="list-style:none; margin-left:32px;">
+                        <input type="checkbox"><span> If attorney info provided: include name, contact, and reason</span><br>
+                        <input type="checkbox"><span> If not provided: note that customer did not share attorney details</span>
+                    </li>
+                    <li><input type="checkbox"><span> Status: Closed</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Mordor Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Mordor &gt; Users &gt; Adjust User Collection</span></li>
+            <li><input type="checkbox"><span> Enter User ARI</span></li>
+            <li><input type="checkbox"><span> Under 'User Collection Status':</span></li>
+            <li style="list-style:none; margin-left:32px;">
+                <input type="checkbox"><span> Select reason: Other</span><br>
+                <input type="checkbox"><span> Comment: "Attorney – Case #[case number]"</span>
+            </li>
+            <li><input type="checkbox"><span> Click Update User Collection</span></li>
+            <li><input type="checkbox"><span> Repeat for each associate account</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📣 Customer Notification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Inform the customer: All communication will stop</span></li>
+            <li><input type="checkbox"><span> Their attorney must contact Affirm directly at (855) 423-3729</span></li>
+            <li><input type="checkbox"><span> Attorney must provide:</span></li>
+            <li style="list-style:none; margin-left:32px;">
+                <input type="checkbox"><span> Full name</span><br>
+                <input type="checkbox"><span> Contact information</span><br>
+                <input type="checkbox"><span> Reason for representing the customer</span><br>
+                <input type="checkbox"><span> Power of Attorney documentation (if discussing account details)</span>
+            </li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

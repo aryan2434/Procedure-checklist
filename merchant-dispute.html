@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Dispute – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Merchant Dispute – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> Customer wants to dispute a purchase after already contacting the merchant</span></li>
+            <li style="list-style:none; margin-left:32px; color:#666; font-size:0.97em;">
+                Example issues: damaged item, item not received, returned/canceled but not refunded
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🧭 Initial Questions to Ask</h2>
+        <ul>
+            <li><input type="checkbox"><span> Did you contact the merchant?</span></li>
+            <li><input type="checkbox"><span> What was their response?</span></li>
+            <li><input type="checkbox"><span> Was a refund promised? When?</span></li>
+            <li><input type="checkbox"><span> Is the purchase non-refundable?</span></li>
+            <li><input type="checkbox"><span> When did the purchase happen? (Check if it's within 60 days)</span></li>
+            <li><input type="checkbox"><span> What's your desired resolution?</span></li>
+            <li><input type="checkbox"><span> Do you have proof? (Email, screenshots, etc.)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📲 Self-Service First</h2>
+        <ul>
+            <li><input type="checkbox"><span> Guide customer to try self-dispute via:</span></li>
+            <li style="list-style:none; margin-left:32px;">
+                <span>Affirm.com → Loans → Details → Dispute this purchase</span>
+            </li>
+            <li><input type="checkbox"><span> If unable or unwilling, proceed with manual steps below.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🖥️ Agent Portal</h2>
+        <ul>
+            <li><input type="checkbox"><span> Manually open dispute in Agent Portal</span></li>
+            <li><input type="checkbox"><span> Get the correct Processed Amount</span></li>
+            <li><input type="checkbox"><span> Stop calls on TCN for 1 month (optional)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create a Merchant Dispute case</span></li>
+            <li>Fill out Dynamic Fields:
+                <ul>
+                    <li><input type="checkbox"><span> Product ID: Loan ID (include others in Additional Comments)</span></li>
+                    <li><input type="checkbox"><span> Merchant Name</span></li>
+                    <li><input type="checkbox"><span> Amount (from AP)</span></li>
+                    <li><input type="checkbox"><span> Dispute Reason</span></li>
+                    <li><input type="checkbox"><span> Purchase Type</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Summary of issue + Loan IDs</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📤 Case Handling</h2>
+        <ul>
+            <li><input type="checkbox"><span> Reassign case to Next Team</span></li>
+            <li><input type="checkbox"><span> Let customer know a follow-up email will arrive in 3–5 business days</span></li>
+            <li><input type="checkbox"><span> Advise them to keep making payments to avoid negative impact</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record (if applicable)</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

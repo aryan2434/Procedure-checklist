@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User Communication Preferences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Update User Communication Preferences – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> Customer asks Affirm to stop specific types of communication:</span></li>
+            <li style="list-style:none; margin-left:32px;">
+                <input type="checkbox"><span> Calls (e.g., "Stop calling me", "Take me off your call list")</span><br>
+                <input type="checkbox"><span> Emails (e.g., "Stop the emails")</span><br>
+                <input type="checkbox"><span> SMS (e.g., "Stop texting me")</span>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create a Salesforce case: Update Usercomm Preferences</span></li>
+            <li>Fill out Dynamic Fields:
+                <ul>
+                    <li><input type="checkbox"><span> Account Updated: Yes</span></li>
+                    <li><input type="checkbox"><span> Status: Closed</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: "Customer requested to stop calls/emails/sms – [Your Name + First Initial] / [Date]"</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>👥 Child Cases</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create a child case for each associate account</span></li>
+            <li><input type="checkbox"><span> Follow same update steps for each</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Agent Portal Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Agent Portal > Notification Preferences</span></li>
+            <li><input type="checkbox"><span> Remove the contact method(s) the customer wants to disable:</span></li>
+            <li style="list-style:none; margin-left:32px;">
+                <input type="checkbox"><span> Phone</span><br>
+                <input type="checkbox"><span> Email</span><br>
+                <input type="checkbox"><span> SMS</span>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ TCN System</h2>
+        <ul>
+            <li><input type="checkbox"><span> Stop calls by selecting "Never"</span></li>
+            <li><input type="checkbox"><span> Set TCN Disposition: "Do Not Call"</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

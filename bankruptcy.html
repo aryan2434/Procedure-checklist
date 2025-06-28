@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankruptcy Procedure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ BANKRUPTCY CASE CHECKLIST</h1>
+    <div class="checklist-section">
+        <h2>🧾 Initial Verification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Ask the customer if they have filed or intend to file for bankruptcy.</span></li>
+            <li><input type="checkbox"><span> Ask if the customer has bankruptcy information or attorney contact details.</span></li>
+            <li><input type="checkbox"><span> Ask for the chapter number (e.g., Chapter 7, 13).</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🖥️ Agent Portal Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Agent Portal &gt; Manage Person &gt; Account Tools &gt; Report Bankruptcy</span></li>
+            <li><input type="checkbox"><span> Select the bankruptcy date.</span></li>
+            <li><input type="checkbox"><span> Select the status as "Pending".</span></li>
+            <li><input type="checkbox"><span> Apply the bankruptcy banner for each associated account.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create a case type: Bankruptcy</span></li>
+            <li>Fill in Dynamic Fields:
+                <ul>
+                    <li><input type="checkbox"><span> Bankruptcy Case Number (if available)</span></li>
+                    <li><input type="checkbox"><span> Attorney Case ID (if available)</span></li>
+                    <li><input type="checkbox"><span> Attorney Contact Information</span></li>
+                    <li><input type="checkbox"><span> Team Verifying Customer: FO</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: "The customer filed or intends to file for bankruptcy. [Your Name + Initial] / [Date]"</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                    <li><input type="checkbox"><span> First Touch Assessment: Attorney claim OR Customer claim</span></li>
+                    <li><input type="checkbox"><span> First Touch Action: Reassign - BK pending</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Reassign the case to "The next team"</span></li>
+            <li><input type="checkbox"><span> Stop calls for 30 days on TCN</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📁 Attorney Child Case (if applicable)</h2>
+        <ul>
+            <li>If the customer mentions they have an attorney:
+                <ul>
+                    <li><input type="checkbox"><span> Create an Attorney case for each associate account</span></li>
+                    <li><input type="checkbox"><span> Close the Attorney case</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Mordor Actions (Only if Attorney info provided)</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Mordor &gt; Users &gt; Adjust User Collection</span></li>
+            <li><input type="checkbox"><span> Enter User ARI</span></li>
+            <li><input type="checkbox"><span> Under User Collection Status, toggle reason: Other</span></li>
+            <li><input type="checkbox"><span> Add comment: Attorney - Case#</span></li>
+            <li><input type="checkbox"><span> Click Update User Collection</span></li>
+            <li><input type="checkbox"><span> Repeat for each associate account</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collections Record</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Records for each account.</span></li>
+            <li><input type="checkbox"><span> Stop calls on TCN: "Never"</span></li>
+            <li><input type="checkbox"><span> Set Reason for delinquency: "Long term financial hardship"</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

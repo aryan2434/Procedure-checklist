@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Flag Interaction – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Red Flag Interaction – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> You observe suspicious, inconsistent, or potentially fraudulent behavior during a customer interaction. This may include third-party involvement, mismatched identity info, or attempts to gain unauthorized access.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Red Flag Interaction</span></li>
+            <li><input type="checkbox"><span> Fill out Dynamic Fields:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Contact is the Account Holder: [Yes/No – based on verification outcome]</span></li>
+                    <li><input type="checkbox"><span> Response Expected: No</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Provide a detailed summary of the call and red flag indicators. Include your name and the date.</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Reassign Case to: Next Team</span></li>
+            <li><input type="checkbox"><span> Do not create child cases for associate accounts</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s) if applicable</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📋 Examples of Red Flag Behavior</h2>
+        <ul>
+            <li><input type="checkbox"><span> Caller switches from “my” to “their” when referring to the account</span></li>
+            <li><input type="checkbox"><span> Caller whispers to someone else during verification</span></li>
+            <li><input type="checkbox"><span> Claims a family member opened the account without permission</span></li>
+            <li><input type="checkbox"><span> Third party attempts to gain access to the account</span></li>
+            <li><input type="checkbox"><span> Asks for sensitive access information (e.g., SMS or email verification codes)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>⚠️ Reminder:</h2>
+        <ul>
+            <li><input type="checkbox"><span> Do not assume anything based on voice or gender</span></li>
+            <li><input type="checkbox"><span> Only escalate when clear suspicious patterns are observed</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html>

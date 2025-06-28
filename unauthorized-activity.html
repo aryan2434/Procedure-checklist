@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unauthorized Activity – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Unauthorized Activity – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> Customer reports a loan was opened without their permission</span></li>
+            <li style="list-style:none; margin-left:32px; color:#666; font-size:0.97em;">
+                e.g., identity theft, fraud, family/friend misuse
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🧭 Ask Probing Questions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Could a family member or friend have opened this?</span></li>
+            <li><input type="checkbox"><span> Have you filed a police report?</span></li>
+            <li><input type="checkbox"><span> Have you experienced identity theft before?</span></li>
+            <li><input type="checkbox"><span> Would you like to file an Unauthorized Activity claim with Affirm?</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📧 Contact Info</h2>
+        <ul>
+            <li><input type="checkbox"><span> Ask for email or mailing address to follow up</span></li>
+            <li><input type="checkbox"><span> If customer refuses, inform them they can submit info at Affirm Help Center</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ TCN Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Stop calls for 1 month while the investigation is in progress</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Agent Portal</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Agent Portal &gt; Manage Person &gt; Account Tools &gt; Report Unauthorized Activity</span></li>
+            <li><input type="checkbox"><span> Select all loans the customer disputes</span></li>
+            <li><input type="checkbox"><span> Turn off AutoPay on each loan</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create a case type: Unauthorized Activity</span></li>
+            <li>Fill out Dynamic Fields:
+                <ul>
+                    <li><input type="checkbox"><span> Contact Method: Phone</span></li>
+                    <li><input type="checkbox"><span> Contact First & Last Name</span></li>
+                    <li><input type="checkbox"><span> Active Loans: Yes/No</span></li>
+                    <li><input type="checkbox"><span> Disputed Product ID(s): All relevant Loan IDs</span></li>
+                    <li><input type="checkbox"><span> Unauthorized Activity Type</span></li>
+                    <li><input type="checkbox"><span> Tool Updated: Yes/No (depending on whether step was done in AP)</span></li>
+                    <li><input type="checkbox"><span> Sufficient Documentation to Proceed: No</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Summarize conversation + Loan IDs</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🔁 Routing</h2>
+        <ul>
+            <li><input type="checkbox"><span> Reassign case to Next Team</span></li>
+            <li><input type="checkbox"><span> Do NOT create child cases for associate accounts</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Mordor Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Mordor &gt; Users &gt; Adjust User Collection</span></li>
+            <li><input type="checkbox"><span> Enter User ARI</span></li>
+            <li><input type="checkbox"><span> Under 'User Collection Status', select reason: Other</span></li>
+            <li><input type="checkbox"><span> Comment: "FO Intake – Case #[case number]"</span></li>
+            <li><input type="checkbox"><span> Click Update User Collection</span></li>
+            <li><input type="checkbox"><span> Repeat for each affected account</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s)</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

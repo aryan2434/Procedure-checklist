@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talking Points</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tp-section {
+            background: #fff;
+            color: #222;
+            border-radius: 10px;
+            margin: 32px auto 0 auto;
+            max-width: 900px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 0;
+        }
+        .tp-header {
+            cursor: pointer;
+            padding: 22px 32px 22px 32px;
+            font-size: 1.18em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e5e8ee;
+            transition: background 0.2s;
+            color: #1a3a5d;
+        }
+        .tp-header:hover {
+            background: #f4f7fa;
+        }
+        .tp-content {
+            display: none;
+            padding: 22px 38px 28px 38px;
+            font-size: 1.05em;
+            color: #222;
+            border-radius: 0 0 10px 10px;
+            background: #fff;
+        }
+        .tp-section.open .tp-content {
+            display: block;
+        }
+        .tp-section.open .tp-header {
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+        }
+        .tp-icon {
+            margin-right: 14px;
+            font-size: 1.2em;
+        }
+        #tpSearch {
+            display: block;
+            margin: 28px auto 24px auto;
+            padding: 14px;
+            width: 340px;
+            font-size: 1.1em;
+            border: 1.5px solid #b0c4d6;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        @media (max-width: 600px) {
+            .tp-header, .tp-content { padding-left: 16px; padding-right: 16px; }
+            #tpSearch { width: 95%; }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1 style="text-align:center; margin-top:36px; color:#1a3a5d;">🗣️ Talking Points</h1>
+    <input type="text" id="tpSearch" placeholder="Search talking points...">
+
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Mini-Miranda</div>
+        <div class="tp-content">
+            This is an attempt to collect a debt by a debt collector and any information obtained will be used for that purpose.
+            <br><br><b>Just In English</b>
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Late Payments Talking Points</div>
+        <div class="tp-content">
+            Please keep in mind that Affirm does not charge any late fees or additional interest on overdue payments. However overdue payments may affect your ability to take new loans with Affirm.<br><br>
+            Additionally, if your agreement includes furnishing we may report payment activity to Experian, and if your payment is 30 or more days overdue it may be reported as delinquent.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Charge Off</div>
+        <div class="tp-content">
+            If a payment is 120 days overdue, your loan will be charged off and may be sent to a third-party collections agency. Affirm can continue to accept payments until our third-party collections partner receives your loan. This usually takes five calendar days. If you'd like to make a payment within this timeframe, you must call in to do so. Note that once your loan is charged off, the status is irreversible.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>What was the purchase?</div>
+        <div class="tp-content">
+            We don't have access to that information. Affirm is only the way the customers choose to pay for items. The customer requests for the loan, if the loan is approved, we only transfer the money to the merchant and the merchant sends the items to the customer. So, if you need more information about your purchase, you need to contact the merchant.<br><br>
+            If you choose Affirm by mistake to pay for your purchase, you need to contact the merchant and ask them to correct the payment made with Affirm and make the payment again with the payment instrument that you prefer.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Merchant Dispute</div>
+        <div class="tp-content">
+            We only handle the financial part of the purchase, refunds, returns, and cancellations are subject to the merchant policies. Until we receive a full refund, the loan will still be active, and therefore you are still responsible for the repayment of it. Something very important too is that if we receive only a partial refund, you will be responsible only for the remaining balance. And, if we receive a full refund and you have made payments, we are gonna refund those payments less any accurate interests, within 3-10 business days.<br><br>
+            We suggest that you keep covering the payments as long as we are waiting for the refund to show just to be in good standing with our company once that late payment might affect your ability to take future loans. If the refunded amount exceeds your remaining loan balance, we'll directly refund the difference, less any accrued interest, to your original form of payment within 3-10 business days.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span> Company Phone Numbers & other information</div>
+        <div class="tp-content">
+            <b>Collections department:</b> 1 888 614 7362<br>
+            <b>Customer care:</b> (855) 423-3729<br>
+            <b>Email:</b> customercare@affirm.com<br>
+            <b>Shop Pay:</b> 855.914.3141<br>
+            <b>Address:</b> 30 Isabella Street, Floor 4 Pittsburgh, PA 15212. (Use this Address when the customer needs to send documentation to Affirm for Example: Unauthorize Activity, Bankruptcy, etc…) Not used for checks<br><br>
+            <b>EXPERIAN:</b> 888-397-3742<br>
+            <b>TRANSUNION:</b> 800-916-8800<br>
+            <b>EQUIFAX:</b> 888-378-4329<br><br>
+            <b>3P COLLECTIONS AGENCIES:</b><br>
+            MRS: 833 755 0348<br>
+            TRUE ACCORD: 866 611 2731<br>
+            DEBTSY/JANUARY: 866 300 1169
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Penny Wipes</div>
+        <div class="tp-content">
+            If the loan has a payment from a bank account that is still processing, our system will not wipe the remaining balance until the final payment clears. We will send you an email once your final payment is processed and the loan is settled.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Good Will Adjustment Request</div>
+        <div class="tp-content">
+            We are unable to remove this late payment from your account. Affirm has a regulatory obligation to report accurate information to the credit bureau and can only change reporting when an inaccuracy is identified. Since the information on your account is accurate, we are unable to make any changes.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Close Account</div>
+        <div class="tp-content">
+            The customer can NOT close the account within 30 days after the last payment.<br><br>
+            Customers can NOT have a loan that's current, pending, overdue, or charged off (unless paid in full post-charge off) on any associated product-specific account.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>When Will My Payment History Appear on My Credit Report?</div>
+        <div class="tp-content">
+            If your loan includes furnishing, payments may take 30-60 days to appear on your credit report, depending on the date your payment was made and the date it was reported to Experian.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Loan Type – Affirm Full Furnished</div>
+        <div class="tp-content">
+            Loans that are reported: Buy with Affirm, Virtual card, Walmart, Virtual Card Integrated, Amazon, Shop pay monthly, Affirm go, Affirm go 2.5 and 3.0, Shop pay biweekly.<br><br>
+            Please keep in mind that Affirm does not charge any late fees or additional interest on overdue payments. However overdue payments may affect your ability to take new loans with Affirm.<br><br>
+            Additionally, if your agreement includes furnishing we may report payment activity to Experian, and if your payment is 30 or more days overdue it may be reported as delinquent.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Affirm Will Approve Them Another Loan</div>
+        <div class="tp-content">
+            We can't tell if your application will be approved or declined until you actually submit the application. Your credit score will not be affected by applying with Affirm.<br><br>
+            Affirm underwrites each transaction separately based on the information you provide or authorize us to obtain. We'll give you a credit decision after you apply for an Affirm loan.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Purchasing Power</div>
+        <div class="tp-content">
+            We want to let you know that the purchasing power is only an estimate on how much you can spend with us, however this estimate is still subject to credit check and approval, based on your current finances, and may change from time to time. That you got a purchasing power does not mean that you are already approved for a loan, you will have to apply in order to see the outcome. Once you apply for a loan you will be provided the loan terms at checkout.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Spanish Scripts</div>
+        <div class="tp-content">
+            <b>Verified customer Outbound</b><br>
+            "Hola, gracias por tomarte tu tiempo para responder a nuestra llamada. Me llamo [Name] y formó parte del equipo de Affirm. Quería hablarte sobre el pago pendiente que tienes con nosotros. En esta ocasión, solamente puedo ofrecerte asistencia en inglés, por lo que te sugiero que accedas a la aplicación o al sitio web de Affirm y hagas el pago hoy. ¡Es muy fácil! Si lo prefieres, vuelve a llamarnos con un intérprete para que podamos proporcionarte la mejor asistencia posible. Agradecemos tu comprensión y estamos a tu disposición para ayudarte con lo que necesites. Esperamos hablar contigo pronto."<br><br>
+            <b>Unverified Customer</b><br>
+            Gracias por contactar Affirm. En este momento, Affirm solo ofrece soporte en inglés. Estoy más que dispuesto a continuar esta conversación en inglés, o puede llamarnos de nuevo cuando esté con alguien que pueda traducir para usted.<br><br>
+            <b>Inbound call</b><br>
+            Gracias por contactar Affirm. En este momento, Affirm solo ofrece soporte en inglés. Estoy más que dispuesto a continuar esta conversación en inglés, o puede llamarnos de nuevo cuando esté con alguien que pueda traducir para usted.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Chase Credit Cards</div>
+        <div class="tp-content">
+            Chase has announced that as of October 10, 2024, cardholders will no longer have the option to use Chase credit cards to pay for third-party Buy Now Pay Later installment plans.<br><br>
+            This is not a decision made by Affirm. We will continue to accept payment methods from other credit card issuers for down payments and Pay in 4 (four biweekly, interest-free payments). We always encourage using ACH bank transfers and debit cards for payments.
+        </div>
+    </div>
+    <div class="tp-section">
+        <div class="tp-header"><span class="tp-icon">🗣️</span>Capital One Credit Cards</div>
+        <div class="tp-content">
+            Capital One no longer allows its cardholders to use their credit card for certain services, including Affirm. As a result of this change, customers can no longer use their Capital One-issued credit card towards their Affirm Payment Plans. So in the case that you have been trying to transact with Affirm using a Capital One credit card, please be advised to use a different payment method.
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tp-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const section = this.parentElement;
+                section.classList.toggle('open');
+            });
+        });
+        document.getElementById('tpSearch').addEventListener('input', function() {
+            const val = this.value.toLowerCase();
+            document.querySelectorAll('.tp-section').forEach(section => {
+                const header = section.querySelector('.tp-header').textContent.toLowerCase();
+                if(header.includes(val)) {
+                    section.style.display = '';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

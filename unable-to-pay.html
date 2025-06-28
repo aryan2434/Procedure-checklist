@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unable to Pay – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Unable to Pay – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> The customer states they are currently unable to make a payment or are experiencing temporary financial hardship.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ TCN Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Stop calls for 1 month on TCN</span></li>
+            <li><input type="checkbox"><span> TCN Disposition: Temporary Hardship</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Unable to Pay</span></li>
+            <li><input type="checkbox"><span> Fill out Dynamic Fields:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Future Payment Scheduled: No – Unable to pay</span></li>
+                    <li><input type="checkbox"><span> Product ID: [Loan ID]</span></li>
+                    <li><input type="checkbox"><span> Form of Payment Relief: Other</span></li>
+                    <li><input type="checkbox"><span> Payment Activity Requested: Unable to Pay</span></li>
+                    <li><input type="checkbox"><span> Requestor: Account Holder</span></li>
+                    <li><input type="checkbox"><span> Loan Modification Discussed: No</span></li>
+                    <li><input type="checkbox"><span> Reason for Delinquency: [Based on customer's explanation]</span></li>
+                    <li><input type="checkbox"><span> Partial Payment Completed: Yes/No (as applicable)</span></li>
+                    <li><input type="checkbox"><span> Status: Closed</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Summarize discussion and list all loan IDs involved</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Do not create child cases for associate accounts</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s)</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cease and Desist Procedure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ CEASE AND DESIST CASE CHECKLIST</h1>
+    <div class="checklist-section">
+        <h2>🔍 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> Customer explicitly requests to stop all communication with Affirm (e.g., "Do not contact me again").</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ Did the customer disconnect after the request?</h2>
+        <ul>
+            <li><b>✅ YES – Customer Disconnected After Request</b>
+                <ul>
+                    <li><h3>🖥️ TCN System</h3></li>
+                    <li><input type="checkbox"><span> Stop the calls on TCN by selecting "Never"</span></li>
+                    <li><input type="checkbox"><span> TCN Disposition: "Cease and Desist"</span></li>
+                    <li><h3>📂 Salesforce Case Creation</h3></li>
+                    <li><input type="checkbox"><span> Create a Cease and Desist case</span></li>
+                    <li>Fill in Dynamic Fields:
+                        <ul>
+                            <li><input type="checkbox"><span> User Collections Updated: Disabled: Other</span></li>
+                            <li><input type="checkbox"><span> Additional Comments: "Cease communication request - [Your Name + First Initial] / [Date]"</span></li>
+                            <li><input type="checkbox"><span> Status: Closed</span></li>
+                            <li><input type="checkbox"><span> Close all related cases</span></li>
+                        </ul>
+                    </li>
+                    <li><h3>👥 Associate Accounts</h3></li>
+                    <li><input type="checkbox"><span> Create a child case for each associate account</span></li>
+                    <li><input type="checkbox"><span> Repeat the same steps above for each</span></li>
+                    <li><h3>🛠️ Agent Portal</h3></li>
+                    <li><input type="checkbox"><span> Apply Cease and Desist tool</span></li>
+                </ul>
+            </li>
+            <li><b>❌ NO – Customer Stays on Call</b>
+                <ul>
+                    <li><h3>🗣️ Clarify the Request</h3></li>
+                    <li><input type="checkbox"><span> Ask the customer to specify if they want to:</span></li>
+                    <li style="list-style:none; margin-left:32px;">
+                        <input type="checkbox"><span> Stop all communication</span><br>
+                        <input type="checkbox"><span> Stop calls only</span><br>
+                        <input type="checkbox"><span> If the request is temporary or permanent</span>
+                    </li>
+                    <li><h3>🔒 If Permanent</h3></li>
+                    <li><input type="checkbox"><span> Stop the calls on TCN: "Never"</span></li>
+                    <li><input type="checkbox"><span> Create Update Usercomm Preferences case (not Cease and Desist)</span></li>
+                    <li><input type="checkbox"><span> In Agent Portal > Notification Preferences: Remove phone contact options</span></li>
+                    <li><input type="checkbox"><span> TCN Disposition: "Do Not Call"</span></li>
+                    <li><h3>⏳ If Temporary</h3></li>
+                    <li><input type="checkbox"><span> Continue the call and take normal action (e.g., PTP, Future Pay)</span></li>
+                    <li><input type="checkbox"><span> Disposition the call appropriately in TCN</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,168 @@
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: #f4f7fa;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 1.7em;
+    letter-spacing: 1px;
+    color: #1a3a5d;
+}
+
+h2 {
+    font-size: 1.1em;
+    color: #2d5c88;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+a {
+    display: inline-block;
+    margin: 24px 0 0 24px;
+    color: #0074d9;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #005fa3;
+}
+
+#searchBox {
+    display: block;
+    margin: 28px auto 24px auto;
+    padding: 14px;
+    width: 340px;
+    font-size: 1.1em;
+    border: 1.5px solid #b0c4d6;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+#procedureList {
+    list-style: none;
+    padding: 0;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+#procedureList li {
+    margin: 18px 0;
+}
+
+#procedureList a {
+    text-decoration: none;
+    color: #0074d9;
+    font-size: 1.15em;
+    transition: color 0.2s;
+}
+
+#procedureList a:hover {
+    color: #005fa3;
+}
+
+.checklist-section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    max-width: 1020px;
+    margin: 32px auto 0 auto;
+    padding: 24px 24px 16px 24px;
+}
+
+.checklist-section ul {
+    padding-left: 0;
+}
+
+.checklist-section li {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.checklist-section li ul {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-left: 28px;
+}
+
+li input[type="checkbox"] {
+    margin-right: 12px;
+    width: 22px;
+    height: 22px;
+    accent-color: #0074d9;
+    cursor: pointer;
+}
+
+li input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+@media (max-width: 700px) {
+    .checklist-section {
+        padding: 18px 8px 10px 8px;
+    }
+    #searchBox {
+        width: 95%;
+    }
+}
+
+.header-bar {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    height: 64px;
+    margin-bottom: 32px;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 32px;
+}
+
+.affirm-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 18px;
+}
+
+.site-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #1a3a5d;
+    letter-spacing: 1px;
+}
+
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    padding: 32px 32px 24px 32px;
+}
+
+@media (max-width: 800px) {
+    main {
+        padding: 16px 4px 10px 4px;
+    }
+    .logo-title {
+        margin-left: 10px;
+    }
+} 

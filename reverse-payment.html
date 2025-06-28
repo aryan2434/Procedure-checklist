@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Payment – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Reverse Payment – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> Customer requests reversal of a payment made via debit card or bank account.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>💳 If Payment was via Debit Card:</h2>
+        <ul>
+            <li><b>☎️ Customer Confirmation</b>
+                <ul>
+                    <li><input type="checkbox"><span> Confirm payment was made within 3 calendar days</span></li>
+                    <li><input type="checkbox"><span> Confirm customer agrees to 3–10 business days for funds to reflect back</span></li>
+                </ul>
+            </li>
+            <li><b>💬 Rocket Chat Request</b>
+                <ul>
+                    <li><input type="checkbox"><span> Post request in Rocket Chat:</span></li>
+                    <li style="list-style:none; margin-left:32px; color:#666; font-size:0.97em;">
+                        Hello, can someone pls help me with a reverse payment?<br>
+                        ARI: [insert ARI]<br>
+                        Loan ID: [insert loan ID]<br>
+                        Amount: [insert amount]<br>
+                        Cx agreed with the terms.
+                    </li>
+                </ul>
+            </li>
+            <li><b>📂 Salesforce Case (only if needed):</b>
+                <ul>
+                    <li><input type="checkbox"><span> Create case only if:</span>
+                        <ul>
+                            <li><input type="checkbox"><span> No Rocket Chat response</span></li>
+                            <li><input type="checkbox"><span> Payment made by bank account</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🏦 If Payment was via Bank Account:</h2>
+        <ul>
+            <li><b>📞 Customer Confirmation</b>
+                <ul>
+                    <li><input type="checkbox"><span> Confirm 3–5 business days have passed since payment was initiated</span></li>
+                    <li><input type="checkbox"><span> Confirm customer agrees to 3–10 business days refund timeline</span></li>
+                    <li><input type="checkbox"><span> Educate customer on refund expectations</span></li>
+                </ul>
+            </li>
+            <li><b>📂 Salesforce Case Creation</b>
+                <ul>
+                    <li><input type="checkbox"><span> Case Type: Reverse Payment</span></li>
+                    <li><input type="checkbox"><span> Fill out Dynamic Fields:</span>
+                        <ul>
+                            <li><input type="checkbox"><span> Product ID: [Loan ID]</span></li>
+                            <li><input type="checkbox"><span> Status: In Progress</span></li>
+                            <li><input type="checkbox"><span> Payment Activity Requested: Reverse payment – Pending or Processed</span></li>
+                            <li><input type="checkbox"><span> Requestor: Account Holder</span></li>
+                            <li><input type="checkbox"><span> Payment Already Processed: Yes/No</span></li>
+                            <li><input type="checkbox"><span> Is Contact within 3 days of payment: Yes</span></li>
+                            <li><input type="checkbox"><span> Payment Reversed: Yes/No</span></li>
+                            <li><input type="checkbox"><span> Additional Comments: Include ARI, loan IDs, amounts, and customer agreement</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><b>🧾 Case Reassignment</b>
+                <ul>
+                    <li><input type="checkbox"><span> Reassign to: First Team</span></li>
+                </ul>
+            </li>
+            <li><b>📉 Collection Records</b>
+                <ul>
+                    <li><input type="checkbox"><span> Create Collection Record(s)</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

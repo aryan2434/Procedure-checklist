@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrong Number – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Wrong Number – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> A caller or voicemail indicates that Affirm is contacting the wrong number, or the number is no longer in service.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ TCN Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Stop calls on TCN: Never</span></li>
+            <li><input type="checkbox"><span> TCN Disposition: Inactive Number/Wrong Number</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Agent Portal Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Release the phone number from the account</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Update Phone Number</span></li>
+            <li><input type="checkbox"><span> Close the case immediately</span></li>
+            <li><input type="checkbox"><span> Create a child case for each associated account</span></li>
+            <li><input type="checkbox"><span> Fill out Additional Comments:</span>
+                <ul>
+                    <li style="color:#666; font-size:0.97em;">"Phone number was released due to a wrong number claim – [Your Name + Initial] / [Date]"</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Do not create Collection Records for wrong number cases</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deceased – Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ Deceased – Checklist</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger</h2>
+        <ul>
+            <li><input type="checkbox"><span> A third party (family member, friend, etc.) notifies that the account holder has passed away.</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>☎️ TCN Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Stop calls on TCN: Never</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>💳 AutoPay</h2>
+        <ul>
+            <li><input type="checkbox"><span> Turn off AutoPay on each loan</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Agent Portal</h2>
+        <ul>
+            <li><input type="checkbox"><span> No direct Agent Portal step for deceased – handled via Salesforce and Mordor</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Deceased</span></li>
+            <li><input type="checkbox"><span> Create a child case for each associated account</span></li>
+            <li><input type="checkbox"><span> Fill out Dynamic Fields:</span>
+                <ul>
+                    <li><input type="checkbox"><span> User Collections Disabled: Disabled: Other</span></li>
+                    <li><input type="checkbox"><span> AutoPay Disabled: Yes</span></li>
+                    <li><input type="checkbox"><span> 3P/Executor Relationship to Customer: [Based on caller's info]</span></li>
+                    <li><input type="checkbox"><span> Contact's First and Last Name: [If provided]</span></li>
+                    <li><input type="checkbox"><span> Contact's Email Address: [If provided]</span></li>
+                    <li><input type="checkbox"><span> Contact Phone Number: [If provided]</span></li>
+                    <li><input type="checkbox"><span> Documentation Provided: No</span></li>
+                    <li><input type="checkbox"><span> Sufficient Documentation to Proceed: No</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Include all information shared during the call (note if none provided)</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>🛠️ Mordor Actions</h2>
+        <ul>
+            <li><input type="checkbox"><span> Go to: Mordor &gt; Users &gt; Adjust User Collection</span></li>
+            <li><input type="checkbox"><span> Enter User ARI</span></li>
+            <li><input type="checkbox"><span> Under 'User Collection Status':</span></li>
+            <li style="list-style:none; margin-left:32px;">
+                <input type="checkbox"><span> Toggle reason: Other</span><br>
+                <input type="checkbox"><span> Comment: "Deceased - Case #[case number]"</span>
+            </li>
+            <li><input type="checkbox"><span> Click Update User Collection</span></li>
+            <li><input type="checkbox"><span> Repeat this for each associated account</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📫 Document Submission Info for Caller</h2>
+        <ul>
+            <li><input type="checkbox"><span> Provide email: customercare@affirm.com</span></li>
+            <li><input type="checkbox"><span> If they prefer physical mail, give address:</span>
+                <ul>
+                    <li style="color:#666; font-size:0.97em;">Affirm, Inc.<br>30 Isabella Street, Floor 4<br>Pittsburgh, PA 15212</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📣 Customer/Caregiver Notification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Inform the caller that:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Affirm will review the case</span></li>
+                    <li><input type="checkbox"><span> No further communication will be made to the deceased's contact info</span></li>
+                    <li><input type="checkbox"><span> They may send a death certificate for validation via email or mail</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 
