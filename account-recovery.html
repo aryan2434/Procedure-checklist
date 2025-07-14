@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Recovery Procedure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ ACCOUNT RECOVERY – CHECKLIST</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger:</h2>
+        <p>The customer is unable to access their Affirm account, typically due to a lockout following a previously identified unauthorized activity or security concern.</p>
+    </div>
+    <div class="checklist-section">
+        <h2>🧾 Initial Verification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Confirm the request is being made by the account holder</span></li>
+            <li><input type="checkbox"><span> Verify the following details:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Full Name</span></li>
+                    <li><input type="checkbox"><span> Date of Birth</span></li>
+                    <li><input type="checkbox"><span> Phone Number</span></li>
+                    <li><input type="checkbox"><span> Email Address</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Ensure the customer is calling Affirm directly</span></li>
+            <li><input type="checkbox"><span> Confirm the account is eligible for recovery (not permanently restricted)</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Account Recovery</span></li>
+            <li>Fill out Dynamic Fields:
+                <ul>
+                    <li><input type="checkbox"><span> Contact Method: Phone</span></li>
+                    <li><input type="checkbox"><span> Contacts First and Last Name: [As provided]</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Include summary of verification and recovery request</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Reassign Case to: Next Team – Outsourced Risk Ops Queue</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📣 Customer Notification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Inform the customer:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Their account recovery case has been submitted</span></li>
+                    <li><input type="checkbox"><span> It will be reviewed by the appropriate team</span></li>
+                    <li><input type="checkbox"><span> They may receive follow-up via email once processed</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s) if related to account lockout/payment concern</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 

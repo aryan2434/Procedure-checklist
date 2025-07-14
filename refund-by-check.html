@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund by Check Procedure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">&larr; Back to Checklist</a>
+    <h1>✅ REFUND BY CHECK – CHECKLIST</h1>
+    <div class="checklist-section">
+        <h2>🔔 Trigger:</h2>
+        <p>A customer is eligible for a refund, and due to certain conditions, the refund must be issued via check instead of electronically.</p>
+    </div>
+    <div class="checklist-section">
+        <h2>📋 Scenarios That Qualify for Check Refunds</h2>
+        <ul>
+            <li><input type="checkbox"><span> A payment refund has failed (e.g., failed via Stripe)</span></li>
+            <li><input type="checkbox"><span> An overpayment was made by check</span></li>
+            <li><input type="checkbox"><span> Refund was initiated 180+ days after the original payment (debit/ACH)</span></li>
+            <li><input type="checkbox"><span> An over-refund occurred due to merchant processing error</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📂 Salesforce Case Creation</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create case type: Refund by Check</span></li>
+            <li>Fill out Dynamic Fields:
+                <ul>
+                    <li><input type="checkbox"><span> Product ID: [Loan ID]</span></li>
+                    <li><input type="checkbox"><span> Additional Comments: Explain the reason for the check refund and include any relevant loan or overpayment information</span></li>
+                    <li><input type="checkbox"><span> Status: In Progress</span></li>
+                </ul>
+            </li>
+            <li><input type="checkbox"><span> Reassign Case to: Next Team</span></li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📫 Mailing Address Verification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Verify the mailing address in Agent Portal</span></li>
+            <li><input type="checkbox"><span> If no address is listed or customer prefers to confirm:</span>
+                <ul>
+                    <li><input type="checkbox"><span> Ask the customer to verify their current mailing address</span></li>
+                    <li><input type="checkbox"><span> Update the address in Agent Portal if needed</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📣 Customer Notification</h2>
+        <ul>
+            <li><input type="checkbox"><span> Inform the customer:</span>
+                <ul>
+                    <li><input type="checkbox"><span> A refund check will be mailed</span></li>
+                    <li><input type="checkbox"><span> It may take up to 30 business days to receive it</span></li>
+                    <li><input type="checkbox"><span> They will receive confirmation once it's sent</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="checklist-section">
+        <h2>📉 Collection Records</h2>
+        <ul>
+            <li><input type="checkbox"><span> Create Collection Record(s) if applicable</span></li>
+        </ul>
+    </div>
+    <footer style="text-align:center; margin: 40px 0 10px 0; color: #888; font-size: 0.98em;">
+        For any confusion or latest updates, please refer to the official procedure PDF.
+    </footer>
+</body>
+</html> 
