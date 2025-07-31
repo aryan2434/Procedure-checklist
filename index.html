@@ -974,7 +974,7 @@
                     },
                     body: JSON.stringify({
                         message: commitMessage,
-                        content: btoa(newContent),
+                        content: unicodeToBase64(newContent),
                         sha: currentFileData.sha
                     })
                 });
@@ -1006,6 +1006,11 @@
             
             // Return the full HTML
             return newDoc.documentElement.outerHTML;
+        }
+
+        // Unicode-safe base64 encoding
+        function unicodeToBase64(str) {
+            return btoa(unescape(encodeURIComponent(str)));
         }
 
         // Show status messages
