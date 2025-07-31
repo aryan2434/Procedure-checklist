@@ -778,7 +778,7 @@
                 }
 
                 const fileData = await response.json();
-                const content = atob(fileData.content);
+                const content = base64ToUnicode(fileData.content);
                 
                 currentFile = fileName;
                 originalContent = content;
@@ -1011,6 +1011,11 @@
         // Unicode-safe base64 encoding
         function unicodeToBase64(str) {
             return btoa(unescape(encodeURIComponent(str)));
+        }
+
+        // Unicode-safe base64 decoding
+        function base64ToUnicode(str) {
+            return decodeURIComponent(escape(atob(str)));
         }
 
         // Show status messages
