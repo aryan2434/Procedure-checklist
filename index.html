@@ -83,6 +83,7 @@
                                 <span class="toolbar-separator">|</span>
                                 <button onclick="formatText('ul')" title="Bullet List">• List</button>
                                 <button onclick="formatText('ol')" title="Numbered List">1. List</button>
+                                <button onclick="insertChecklist()" title="Insert Checklist">☐ Checklist</button>
                                 <span class="toolbar-separator">|</span>
                                 <button onclick="formatText('link')" title="Insert Link">🔗 Link</button>
                                 <button onclick="formatText('table')" title="Insert Table">📊 Table</button>
@@ -891,6 +892,24 @@
                 tableHTML += '</table>';
                 
                 document.execCommand('insertHTML', false, tableHTML);
+            }
+        }
+
+        // Insert checklist
+        function insertChecklist() {
+            const items = prompt('Number of checklist items:', '3');
+            
+            if (items && parseInt(items) > 0) {
+                let checklistHTML = '<ul style="list-style: none; padding-left: 0;">';
+                for (let i = 0; i < parseInt(items); i++) {
+                    checklistHTML += '<li style="margin: 8px 0; display: flex; align-items: center;">';
+                    checklistHTML += '<input type="checkbox" style="margin-right: 8px; transform: scale(1.2);">';
+                    checklistHTML += '<span contenteditable="true" style="flex: 1;">Checklist item ' + (i + 1) + '</span>';
+                    checklistHTML += '</li>';
+                }
+                checklistHTML += '</ul>';
+                
+                document.execCommand('insertHTML', false, checklistHTML);
             }
         }
 
