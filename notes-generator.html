@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./checklist.png">
+    <style>
+        .notes-generator {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a3a5d;
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+        
+        .form-select, .form-control {
+            flex: 1;
+            padding: 12px;
+            border: 1.5px solid #b0c4d6;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background: #fff;
+            color: #222;
+        }
+        
+        .form-select:focus, .form-control:focus {
+            outline: none;
+            border-color: #0074d9;
+            box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.1);
+        }
+        
+        textarea.form-control {
+            height: 80px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .copy-btn {
+            background: #0074d9;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: #005fa3;
+        }
+        
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 1.5em;
+            color: #1a3a5d;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 700px) {
+            .notes-generator {
+                margin: 10px;
+                padding: 16px;
+            }
+            
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .form-label {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notes-generator">
+        <h1 class="page-title">Notes Generator</h1>
+        
+        <form id="dataForm">
+            <div class="form-group">
+                <label for="ad" class="form-label">AD</label>
+                <select class="form-select" id="ad">
+                    <option selected disabled>Select AD...</option>
+                    <option>Already paid</option>
+                    <option>Pay by phone</option>
+                    <option>Future pay</option>
+                    <option>Promise to pay</option>
+                    <option>Non-commital</option>
+                    <option>Verified hang up</option>
+                    <option>Attorney</option>
+                    <option>Bankruptcy</option>
+                    <option>Deceased</option>
+                    <option>Request call-back</option>
+                    <option>Merchant dispute</option>
+                    <option>Permanent hardship</option>
+                    <option>Temporary hardship</option>
+                    <option>Do not call</option>
+                    <option>Refuse to pay</option>
+                    <option>Unauth/stolen identity</option>
+                    <option>Cease and desist</option>
+                    <option>Cx hangup during payment</option>
+                    <option>Payment deferral approval</option>
+                    <option>Payment deferral denied</option>
+                    <option>Unverified hang up</option>
+                    <option>Customer not reached</option>
+                    <option>Third party left message</option>
+                    <option>Robot call</option>
+                    <option>Answering machine no message left</option>
+                    <option>Wrong number</option>
+                    <option>Left voice message</option>
+                    <option>Verified cx who speaks Spanish</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="lptp" class="form-label">LPTP</label>
+                <select class="form-select" id="lptp">
+                    <option selected disabled>Select LPTP...</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rfd" class="form-label">RFD</label>
+                <select class="form-select" id="rfd">
+                    <option selected disabled>Select RFD...</option>
+                    <option>Job loss/ reduction in income</option>
+                    <option>Merchant dispute/ return</option>
+                    <option>Unexpected expenses</option>
+                    <option>Fraud/ unauthorized dispute</option>
+                    <option>Death of family member</option>
+                    <option>Death of customer</option>
+                    <option>Hospitalized/ long-term illness</option>
+                    <option>New debit card / bank account</option>
+                    <option>Incarceration</option>
+                    <option>Oversight/forgot</option>
+                    <option>Due date does not work/ new due date request</option>
+                    <option>Login issues app/web</option>
+                    <option>Payment failed on app/web</option>
+                    <option>App issue</option>
+                    <option>Did not get notified of DQ</option>
+                    <option>N/A not discussed</option>
+                    <option>BK/ Attorney customer filed for Bankruptcy or has an attorney</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="payment" class="form-label">Payment</label>
+                <textarea class="form-control" id="payment" placeholder="Type payment arrangements here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="notes" class="form-label">Notes</label>
+                <textarea class="form-control" id="notes" placeholder="Type additional notes here..."></textarea>
+            </div>
+
+            <button type="button" class="copy-btn" onclick="copyData()">Copy to Clipboard</button>
+        </form>
+    </div>
+
+    <script>
+        function copyData() {
+            const ad = document.getElementById("ad").value;
+            const lptp = document.getElementById("lptp").value;
+            const rfd = document.getElementById("rfd").value;
+            const payment = document.getElementById("payment").value;
+            const notes = document.getElementById("notes").value;
+
+            // Check if required fields are filled
+            if (!ad || ad === "Select AD...") {
+                alert("Please select an AD value");
+                return;
+            }
+            if (!lptp || lptp === "Select LPTP...") {
+                alert("Please select an LPTP value");
+                return;
+            }
+            if (!rfd || rfd === "Select RFD...") {
+                alert("Please select an RFD value");
+                return;
+            }
+
+            const formatted = 
+`AD: ${ad}
+LPTP: ${lptp}
+RFD: ${rfd}
+Payment Arrangements: ${payment}
+Additional Notes: ${notes}`;
+
+            navigator.clipboard.writeText(formatted)
+                .then(() => {
+                    // Create a temporary success message
+                    const btn = document.querySelector('.copy-btn');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    btn.style.background = '#28a745';
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '#0074d9';
+                    }, 2000);
+                })
+                .catch(() => alert("Copy failed. Please try again."));
+        }
+    </script>
+</body>
+</html> 

@@ -13,8 +13,157 @@
             <img src="./image.png" alt="Affirm Logo" class="affirm-logo">
             <span class="site-title">Procedure Checklist</span>
         </div>
+        <div class="header-actions">
+            <button id="editorToggle" class="editor-btn" onclick="toggleEditor()">📝 Editor</button>
+        </div>
     </header>
     <main>
+        <!-- Editor Section -->
+        <div id="editorSection" style="display: none;">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <h2>Content Editor</h2>
+                    <button class="close-btn" onclick="toggleEditor()">×</button>
+                </div>
+                
+                <!-- Login Section -->
+                <div id="loginSection">
+                    <div class="login-form">
+                        <h3>GitHub Authentication</h3>
+                        <p>Enter your GitHub credentials to edit content:</p>
+                        <div class="form-group">
+                            <label for="githubUsername">GitHub Username:</label>
+                            <input type="text" id="githubUsername" placeholder="Your GitHub username">
+                        </div>
+                        <div class="form-group">
+                            <label for="githubToken">Personal Access Token:</label>
+                            <input type="password" id="githubToken" placeholder="Your GitHub token">
+                            <small><a href="https://github.com/settings/tokens" target="_blank">Create a token here</a></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="repoName">Repository Name:</label>
+                            <input type="text" id="repoName" placeholder="username/repository-name">
+                        </div>
+                        <button onclick="authenticateGitHub()" class="auth-btn">Login</button>
+                    </div>
+                </div>
+
+                <!-- Editor Interface -->
+                <div id="editorInterface" style="display: none;">
+                    <div class="editor-controls">
+                        <div class="file-selector">
+                            <label for="fileSelect">Select File to Edit:</label>
+                            <select id="fileSelect" onchange="loadFileContent()">
+                                <option value="">Choose a file...</option>
+                            </select>
+                        </div>
+                        <div class="editor-actions">
+                            <button onclick="saveChanges()" class="save-btn">💾 Save Changes</button>
+                            <button onclick="previewChanges()" class="preview-btn">👁️ Preview</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-content">
+                        <div class="editor-panel">
+                            <h4>Edit Content</h4>
+                            <textarea id="contentEditor" placeholder="Content will load here..."></textarea>
+                        </div>
+                        <div class="preview-panel">
+                            <h4>Preview</h4>
+                            <div id="contentPreview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Notes Generator Section (now at the top) -->
+        <div id="notesGeneratorSection" style="display: block; margin-bottom: 24px;">
+            <div class="notes-generator-compact">
+                <div class="ng-title" onclick="toggleNotesGenerator(event)" style="cursor:pointer;display:flex;align-items:center;gap:10px;">
+                    <span style="font-size:1.2em;font-weight:600;color:#1a3a5d;">Collections Notes Generator</span>
+                    <span id="ng-arrow" style="font-size:1.2em;transition:transform 0.2s;">▼</span>
+                </div>
+                <div id="ng-content" style="display:none;">
+                    <form id="ng-form" style="display:flex;flex-direction:column;gap:8px;max-width:380px;">
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <label for="ng-ad" style="font-weight:500;width:140px;font-size:0.95em;">AD</label>
+                            <select id="ng-ad" class="ng-select" style="flex:1;">
+                                <option value="" selected></option>
+                                <option>Already paid</option>
+                                <option>Pay by phone</option>
+                                <option>Future pay</option>
+                                <option>Promise to pay</option>
+                                <option>Non-commital</option>
+                                <option>Verified hang up</option>
+                                <option>Attorney</option>
+                                <option>Bankruptcy</option>
+                                <option>Deceased</option>
+                                <option>Request call-back</option>
+                                <option>Merchant dispute</option>
+                                <option>Permanent hardship</option>
+                                <option>Temporary hardship</option>
+                                <option>Do not call</option>
+                                <option>Refuse to pay</option>
+                                <option>Unauth/stolen identity</option>
+                                <option>Cease and desist</option>
+                                <option>Cx hangup during payment</option>
+                                <option>Payment deferral approval</option>
+                                <option>Payment deferral denied</option>
+                                <option>Unverified hang up</option>
+                                <option>Customer not reached</option>
+                                <option>Third party left message</option>
+                                <option>Robot call</option>
+                                <option>Answering machine no message left</option>
+                                <option>Wrong number</option>
+                                <option>Left voice message</option>
+                                <option>Verified cx who speaks Spanish</option>
+                            </select>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <label for="ng-lptp" style="font-weight:500;width:140px;font-size:0.95em;">LPTP</label>
+                            <select id="ng-lptp" class="ng-select" style="flex:1;">
+                                <option value="" selected></option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <label for="ng-rfd" style="font-weight:500;width:140px;font-size:0.95em;">RFD</label>
+                            <select id="ng-rfd" class="ng-select" style="flex:1;">
+                                <option value="" selected></option>
+                                <option>Job loss/ reduction in income</option>
+                                <option>Merchant dispute/ return</option>
+                                <option>Unexpected expenses</option>
+                                <option>Fraud/ unauthorized dispute</option>
+                                <option>Death of family member</option>
+                                <option>Death of customer</option>
+                                <option>Hospitalized/ long-term illness</option>
+                                <option>New debit card / bank account</option>
+                                <option>Incarceration</option>
+                                <option>Oversight/forgot</option>
+                                <option>Due date does not work/ new due date request</option>
+                                <option>Login issues app/web</option>
+                                <option>Payment failed on app/web</option>
+                                <option>App issue</option>
+                                <option>Did not get notified of DQ</option>
+                                <option>N/A not discussed</option>
+                                <option>BK/ Attorney customer filed for Bankruptcy or has an attorney</option>
+                            </select>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:8px;">
+                            <label for="ng-payment" style="font-weight:500;width:140px;font-size:0.95em;">Payment Arrangements</label>
+                            <textarea id="ng-payment" class="ng-input" placeholder="Type payment arrangements here..." style="flex:1;min-height:40px;"></textarea>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:8px;">
+                            <label for="ng-notes" style="font-weight:500;width:140px;font-size:0.95em;">Additional Notes</label>
+                            <textarea id="ng-notes" class="ng-input" placeholder="Type additional notes here..." style="flex:1;min-height:40px;"></textarea>
+                        </div>
+                        <button type="button" class="ng-copy-btn" onclick="ngCopy()" style="background:#0074d9;color:#fff;border:none;padding:7px 16px;border-radius:5px;font-size:0.95em;align-self:flex-end;">Copy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <input type="text" id="searchBox" placeholder="Search procedures...">
         <ul id="procedureList">
             <li><b><a href="talking-points.html">Talking Points</a></b></li>
@@ -45,6 +194,625 @@
             <li><a href="third-party-handling.html">Third Party Handling</a></li>
         </ul>
     </main>
+    
+    <style>
+        /* Editor Styles */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .editor-btn {
+            background: #0074d9;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .editor-btn:hover {
+            background: #005fa3;
+        }
+        
+        .editor-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            max-width: 1200px;
+            overflow: hidden;
+        }
+        
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .editor-header h2 {
+            margin: 0;
+            color: #1a3a5d;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+        
+        .close-btn:hover {
+            background: #e9ecef;
+            color: #495057;
+        }
+        
+        .login-form {
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .login-form h3 {
+            color: #1a3a5d;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .form-group small {
+            display: block;
+            margin-top: 4px;
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .form-group small a {
+            color: #0074d9;
+            text-decoration: none;
+        }
+        
+        .auth-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        
+        .auth-btn:hover {
+            background: #218838;
+        }
+        
+        .editor-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .file-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .file-selector label {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .file-selector select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            min-width: 200px;
+        }
+        
+        .editor-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .save-btn, .preview-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .save-btn {
+            background: #28a745;
+            color: white;
+        }
+        
+        .save-btn:hover {
+            background: #218838;
+        }
+        
+        .preview-btn {
+            background: #17a2b8;
+            color: white;
+        }
+        
+        .preview-btn:hover {
+            background: #138496;
+        }
+        
+        .editor-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 600px;
+        }
+        
+        .editor-panel, .preview-panel {
+            padding: 20px;
+        }
+        
+        .editor-panel {
+            border-right: 1px solid #e9ecef;
+        }
+        
+        .editor-panel h4, .preview-panel h4 {
+            margin: 0 0 16px 0;
+            color: #1a3a5d;
+        }
+        
+        #contentEditor {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        
+        #contentPreview {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            height: 500px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+        
+        .status-message {
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        @media (max-width: 768px) {
+            .editor-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .editor-panel {
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+            
+            .editor-controls {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+            
+            .file-selector {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        #notesGeneratorSection {
+            margin-top: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        
+        .iframe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .iframe-header h2 {
+            margin: 0;
+            color: #1a3a5d;
+            font-size: 1.3em;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+        
+        .close-btn:hover {
+            background: #e9ecef;
+            color: #495057;
+        }
+        
+        #notesGeneratorFrame {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        
+        @media (max-width: 800px) {
+            #notesGeneratorFrame {
+                height: 500px;
+            }
+            
+            .iframe-header {
+                padding: 12px 16px;
+            }
+            
+            .iframe-header h2 {
+                font-size: 1.1em;
+            }
+        }
+        .ng-select, .ng-input {
+            padding: 5px 8px;
+            border: 1.2px solid #b0c4d6;
+            border-radius: 4px;
+            font-size: 0.9em;
+            background: #fff;
+            color: #222;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .ng-select:focus, .ng-input:focus {
+            outline: none;
+            border-color: #0074d9;
+            box-shadow: 0 0 0 2px rgba(0,116,217,0.08);
+        }
+        .ng-copy-btn {
+            transition: background 0.2s;
+        }
+        .ng-copy-btn:active {
+            background: #005fa3;
+        }
+        .ng-preview {
+            min-height: 24px;
+            word-break: break-word;
+        }
+        @media (max-width: 700px) {
+            #ng-form {
+                max-width: 100%;
+            }
+            .ng-input, .ng-select {
+                width: 100% !important;
+                margin-bottom: 0;
+            }
+            #ng-form > div {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            #ng-form label {
+                width: 100% !important;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+    
+    <script>
+        // Global variables for GitHub integration
+        let githubAuth = null;
+        let currentFile = null;
+        let originalContent = null;
+
+        // Toggle editor visibility
+        function toggleEditor() {
+            const editorSection = document.getElementById('editorSection');
+            const isVisible = editorSection.style.display !== 'none';
+            
+            if (isVisible) {
+                editorSection.style.display = 'none';
+            } else {
+                editorSection.style.display = 'block';
+                editorSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // GitHub Authentication
+        async function authenticateGitHub() {
+            const username = document.getElementById('githubUsername').value;
+            const token = document.getElementById('githubToken').value;
+            const repo = document.getElementById('repoName').value;
+
+            if (!username || !token || !repo) {
+                showStatus('Please fill in all fields', 'error');
+                return;
+            }
+
+            try {
+                // Test authentication by fetching repo info
+                const response = await fetch(`https://api.github.com/repos/${repo}`, {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Authentication failed');
+                }
+
+                githubAuth = { username, token, repo };
+                
+                // Load available files
+                await loadAvailableFiles();
+                
+                // Show editor interface
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('editorInterface').style.display = 'block';
+                
+                showStatus('Authentication successful!', 'success');
+            } catch (error) {
+                showStatus('Authentication failed: ' + error.message, 'error');
+            }
+        }
+
+        // Load available HTML files from repository
+        async function loadAvailableFiles() {
+            try {
+                const response = await fetch(`https://api.github.com/repos/${githubAuth.repo}/contents`, {
+                    headers: {
+                        'Authorization': `token ${githubAuth.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch repository contents');
+                }
+
+                const contents = await response.json();
+                const fileSelect = document.getElementById('fileSelect');
+                
+                // Clear existing options
+                fileSelect.innerHTML = '<option value="">Choose a file...</option>';
+                
+                // Add HTML files
+                contents.forEach(item => {
+                    if (item.type === 'file' && item.name.endsWith('.html')) {
+                        const option = document.createElement('option');
+                        option.value = item.name;
+                        option.textContent = item.name;
+                        fileSelect.appendChild(option);
+                    }
+                });
+            } catch (error) {
+                showStatus('Failed to load files: ' + error.message, 'error');
+            }
+        }
+
+        // Load file content for editing
+        async function loadFileContent() {
+            const fileName = document.getElementById('fileSelect').value;
+            if (!fileName) return;
+
+            try {
+                const response = await fetch(`https://api.github.com/repos/${githubAuth.repo}/contents/${fileName}`, {
+                    headers: {
+                        'Authorization': `token ${githubAuth.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch file content');
+                }
+
+                const fileData = await response.json();
+                const content = atob(fileData.content);
+                
+                currentFile = fileName;
+                originalContent = content;
+                
+                document.getElementById('contentEditor').value = content;
+                document.getElementById('contentPreview').innerHTML = content;
+                
+                showStatus(`Loaded ${fileName}`, 'success');
+            } catch (error) {
+                showStatus('Failed to load file: ' + error.message, 'error');
+            }
+        }
+
+        // Preview changes
+        function previewChanges() {
+            const content = document.getElementById('contentEditor').value;
+            document.getElementById('contentPreview').innerHTML = content;
+        }
+
+        // Save changes to GitHub
+        async function saveChanges() {
+            if (!currentFile) {
+                showStatus('No file selected', 'error');
+                return;
+            }
+
+            const newContent = document.getElementById('contentEditor').value;
+            const commitMessage = `Update ${currentFile} via web editor`;
+
+            try {
+                // First, get the current file to get its SHA
+                const getResponse = await fetch(`https://api.github.com/repos/${githubAuth.repo}/contents/${currentFile}`, {
+                    headers: {
+                        'Authorization': `token ${githubAuth.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!getResponse.ok) {
+                    throw new Error('Failed to get current file info');
+                }
+
+                const currentFileData = await getResponse.json();
+
+                // Update the file
+                const updateResponse = await fetch(`https://api.github.com/repos/${githubAuth.repo}/contents/${currentFile}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${githubAuth.token}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: commitMessage,
+                        content: btoa(newContent),
+                        sha: currentFileData.sha
+                    })
+                });
+
+                if (!updateResponse.ok) {
+                    throw new Error('Failed to update file');
+                }
+
+                originalContent = newContent;
+                showStatus('Changes saved successfully! Netlify will auto-deploy the updates.', 'success');
+            } catch (error) {
+                showStatus('Failed to save changes: ' + error.message, 'error');
+            }
+        }
+
+        // Show status messages
+        function showStatus(message, type) {
+            // Remove existing status messages
+            const existingStatus = document.querySelector('.status-message');
+            if (existingStatus) {
+                existingStatus.remove();
+            }
+
+            const statusDiv = document.createElement('div');
+            statusDiv.className = `status-message status-${type}`;
+            statusDiv.textContent = message;
+
+            const editorInterface = document.getElementById('editorInterface');
+            editorInterface.insertBefore(statusDiv, editorInterface.firstChild);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (statusDiv.parentNode) {
+                    statusDiv.remove();
+                }
+            }, 5000);
+        }
+
+        // Notes Generator expand/collapse logic
+        let ngExpanded = false;
+        function toggleNotesGenerator(e) {
+            if (e) e.preventDefault();
+            ngExpanded = !ngExpanded;
+            document.getElementById('notesGeneratorSection').style.display = 'block';
+            document.getElementById('ng-content').style.display = ngExpanded ? 'block' : 'none';
+            document.getElementById('ng-arrow').style.transform = ngExpanded ? 'rotate(180deg)' : 'none';
+            if (ngExpanded) {
+                document.getElementById('notesGeneratorSection').scrollIntoView({behavior:'smooth'});
+            }
+        }
+        // Copy logic only
+        function ngCopy() {
+            const ad = document.getElementById('ng-ad').value;
+            const lptp = document.getElementById('ng-lptp').value;
+            const rfd = document.getElementById('ng-rfd').value;
+            const payment = document.getElementById('ng-payment').value;
+            const notes = document.getElementById('ng-notes').value;
+            let formatted = '';
+            formatted += `AD: ${ad || ''}\n`;
+            formatted += `LPTP: ${lptp || ''}\n`;
+            formatted += `RFD: ${rfd || ''}\n`;
+            formatted += `Payment Arrangements: ${payment || ''}\n`;
+            formatted += `Additional Notes: ${notes || ''}`;
+            navigator.clipboard.writeText(formatted.trim())
+                .then(() => {
+                    const btn = document.querySelector('.ng-copy-btn');
+                    const orig = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    btn.style.background = '#28a745';
+                    setTimeout(()=>{
+                        btn.textContent = orig;
+                        btn.style.background = '#0074d9';
+                    }, 1500);
+                })
+                .catch(() => alert('Copy failed. Please try again.'));
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html> 
