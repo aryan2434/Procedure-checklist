@@ -59,18 +59,38 @@
                         </div>
                         <div class="editor-actions">
                             <button onclick="saveChanges()" class="save-btn">💾 Save Changes</button>
-                            <button onclick="previewChanges()" class="preview-btn">👁️ Preview</button>
+                            <button onclick="toggleEditMode()" class="edit-btn" id="editToggleBtn">✏️ Edit Mode</button>
+                            <button onclick="showCodeView()" class="code-btn">📄 Code View</button>
                         </div>
                     </div>
                     
                     <div class="editor-content">
-                        <div class="editor-panel">
-                            <h4>Edit Content</h4>
+                        <div class="editor-panel" id="codePanel" style="display: none;">
+                            <h4>HTML Code (Advanced)</h4>
                             <textarea id="contentEditor" placeholder="Content will load here..."></textarea>
                         </div>
                         <div class="preview-panel">
-                            <h4>Preview</h4>
-                            <div id="contentPreview"></div>
+                            <h4>Live Preview & Editor</h4>
+                            <div class="preview-toolbar" id="previewToolbar" style="display: none;">
+                                <button onclick="formatText('bold')" title="Bold"><strong>B</strong></button>
+                                <button onclick="formatText('italic')" title="Italic"><em>I</em></button>
+                                <button onclick="formatText('underline')" title="Underline"><u>U</u></button>
+                                <button onclick="formatText('strikethrough')" title="Strikethrough"><s>S</s></button>
+                                <span class="toolbar-separator">|</span>
+                                <button onclick="formatText('h1')" title="Heading 1">H1</button>
+                                <button onclick="formatText('h2')" title="Heading 2">H2</button>
+                                <button onclick="formatText('h3')" title="Heading 3">H3</button>
+                                <span class="toolbar-separator">|</span>
+                                <button onclick="formatText('ul')" title="Bullet List">• List</button>
+                                <button onclick="formatText('ol')" title="Numbered List">1. List</button>
+                                <span class="toolbar-separator">|</span>
+                                <button onclick="formatText('link')" title="Insert Link">🔗 Link</button>
+                                <button onclick="formatText('table')" title="Insert Table">📊 Table</button>
+                                <span class="toolbar-separator">|</span>
+                                <button onclick="undoAction()" title="Undo">↶ Undo</button>
+                                <button onclick="redoAction()" title="Redo">↷ Redo</button>
+                            </div>
+                            <div id="contentPreview" contenteditable="false"></div>
                         </div>
                     </div>
                 </div>
@@ -159,7 +179,10 @@
                             <label for="ng-notes" style="font-weight:500;width:140px;font-size:0.95em;">Additional Notes</label>
                             <textarea id="ng-notes" class="ng-input" placeholder="Type additional notes here..." style="flex:1;min-height:40px;"></textarea>
                         </div>
-                        <button type="button" class="ng-copy-btn" onclick="ngCopy()" style="background:#0074d9;color:#fff;border:none;padding:7px 16px;border-radius:5px;font-size:0.95em;align-self:flex-end;">Copy</button>
+                        <div style="display:flex;gap:8px;align-self:flex-end;">
+                            <button type="button" class="ng-clear-btn" onclick="ngClear()" style="background:#6c757d;color:#fff;border:none;padding:7px 16px;border-radius:5px;font-size:0.95em;">Clear</button>
+                            <button type="button" class="ng-copy-btn" onclick="ngCopy()" style="background:#0074d9;color:#fff;border:none;padding:7px 16px;border-radius:5px;font-size:0.95em;">Copy</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -354,7 +377,7 @@
             gap: 12px;
         }
         
-        .save-btn, .preview-btn {
+        .save-btn, .edit-btn, .code-btn {
             padding: 8px 16px;
             border: none;
             border-radius: 4px;
@@ -372,13 +395,30 @@
             background: #218838;
         }
         
-        .preview-btn {
-            background: #17a2b8;
+        .edit-btn {
+            background: #0074d9;
             color: white;
         }
         
-        .preview-btn:hover {
-            background: #138496;
+        .edit-btn:hover {
+            background: #005fa3;
+        }
+        
+        .edit-btn.active {
+            background: #dc3545;
+        }
+        
+        .edit-btn.active:hover {
+            background: #c82333;
+        }
+        
+        .code-btn {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .code-btn:hover {
+            background: #5a6268;
         }
         
         .editor-content {
@@ -413,12 +453,67 @@
             box-sizing: border-box;
         }
         
+        .preview-toolbar {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .preview-toolbar button {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+            min-width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .preview-toolbar button:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .preview-toolbar button:active {
+            background: #dee2e6;
+        }
+        
+        .toolbar-separator {
+            color: #6c757d;
+            margin: 0 4px;
+            font-weight: bold;
+        }
+        
         #contentPreview {
             border: 1px solid #ddd;
-            border-radius: 6px;
+            border-radius: 0 0 6px 6px;
             padding: 12px;
             height: 500px;
             overflow-y: auto;
+            background: white;
+            outline: none;
+        }
+        
+        #contentPreview:focus {
+            border-color: #0074d9;
+            box-shadow: 0 0 0 2px rgba(0,116,217,0.1);
+        }
+        
+        #contentPreview[contenteditable="true"] {
+            background: #fff;
+        }
+        
+        #contentPreview[contenteditable="false"] {
             background: #f8f9fa;
         }
         
@@ -541,11 +636,14 @@
             border-color: #0074d9;
             box-shadow: 0 0 0 2px rgba(0,116,217,0.08);
         }
-        .ng-copy-btn {
+        .ng-copy-btn, .ng-clear-btn {
             transition: background 0.2s;
         }
         .ng-copy-btn:active {
             background: #005fa3;
+        }
+        .ng-clear-btn:active {
+            background: #5a6268;
         }
         .ng-preview {
             min-height: 24px;
@@ -685,8 +783,14 @@
                 currentFile = fileName;
                 originalContent = content;
                 
+                // Extract body content for editing
+                const bodyContent = extractBodyContent(content);
+                
                 document.getElementById('contentEditor').value = content;
-                document.getElementById('contentPreview').innerHTML = content;
+                document.getElementById('contentPreview').innerHTML = bodyContent;
+                
+                // Reset edit mode
+                setEditMode(false);
                 
                 showStatus(`Loaded ${fileName}`, 'success');
             } catch (error) {
@@ -694,11 +798,132 @@
             }
         }
 
-        // Preview changes
-        function previewChanges() {
-            const content = document.getElementById('contentEditor').value;
-            document.getElementById('contentPreview').innerHTML = content;
+        // Extract body content from full HTML
+        function extractBodyContent(htmlContent) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlContent, 'text/html');
+            const body = doc.querySelector('body');
+            return body ? body.innerHTML : htmlContent;
         }
+
+        // Toggle edit mode
+        function toggleEditMode() {
+            const preview = document.getElementById('contentPreview');
+            const toolbar = document.getElementById('previewToolbar');
+            const editBtn = document.getElementById('editToggleBtn');
+            const isEditable = preview.contentEditable === 'true';
+            
+            setEditMode(!isEditable);
+        }
+
+        // Set edit mode
+        function setEditMode(editable) {
+            const preview = document.getElementById('contentPreview');
+            const toolbar = document.getElementById('previewToolbar');
+            const editBtn = document.getElementById('editToggleBtn');
+            
+            preview.contentEditable = editable;
+            toolbar.style.display = editable ? 'flex' : 'none';
+            
+            if (editable) {
+                editBtn.textContent = '👁️ View Mode';
+                editBtn.classList.add('active');
+                preview.focus();
+            } else {
+                editBtn.textContent = '✏️ Edit Mode';
+                editBtn.classList.remove('active');
+            }
+        }
+
+        // Show code view
+        function showCodeView() {
+            const codePanel = document.getElementById('codePanel');
+            const previewPanel = document.querySelector('.preview-panel');
+            
+            if (codePanel.style.display === 'none') {
+                codePanel.style.display = 'block';
+                previewPanel.style.gridColumn = '2';
+                document.querySelector('.editor-content').style.gridTemplateColumns = '1fr 1fr';
+            } else {
+                codePanel.style.display = 'none';
+                previewPanel.style.gridColumn = '1 / -1';
+                document.querySelector('.editor-content').style.gridTemplateColumns = '1fr';
+            }
+        }
+
+        // Rich text formatting functions
+        function formatText(command, value = null) {
+            if (command === 'link') {
+                const url = prompt('Enter URL:');
+                if (url) {
+                    document.execCommand('createLink', false, url);
+                }
+            } else if (command === 'table') {
+                insertTable();
+            } else {
+                document.execCommand(command, false, value);
+            }
+            document.getElementById('contentPreview').focus();
+        }
+
+        function undoAction() {
+            document.execCommand('undo', false, null);
+        }
+
+        function redoAction() {
+            document.execCommand('redo', false, null);
+        }
+
+        // Insert table
+        function insertTable() {
+            const rows = prompt('Number of rows:', '3');
+            const cols = prompt('Number of columns:', '3');
+            
+            if (rows && cols) {
+                let tableHTML = '<table border="1" style="border-collapse: collapse; width: 100%;">';
+                for (let i = 0; i < parseInt(rows); i++) {
+                    tableHTML += '<tr>';
+                    for (let j = 0; j < parseInt(cols); j++) {
+                        tableHTML += '<td style="padding: 8px; border: 1px solid #ddd;">Cell ' + (i + 1) + '-' + (j + 1) + '</td>';
+                    }
+                    tableHTML += '</tr>';
+                }
+                tableHTML += '</table>';
+                
+                document.execCommand('insertHTML', false, tableHTML);
+            }
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            const preview = document.getElementById('contentPreview');
+            if (preview.contentEditable === 'true' && preview === document.activeElement) {
+                if (e.ctrlKey || e.metaKey) {
+                    switch(e.key) {
+                        case 'b':
+                            e.preventDefault();
+                            formatText('bold');
+                            break;
+                        case 'i':
+                            e.preventDefault();
+                            formatText('italic');
+                            break;
+                        case 'u':
+                            e.preventDefault();
+                            formatText('underline');
+                            break;
+                        case 'z':
+                            e.preventDefault();
+                            if (e.shiftKey) {
+                                redoAction();
+                            } else {
+                                undoAction();
+                            }
+                            break;
+                    }
+                }
+            }
+        });
 
         // Save changes to GitHub
         async function saveChanges() {
@@ -707,7 +932,21 @@
                 return;
             }
 
-            const newContent = document.getElementById('contentEditor').value;
+            let newContent;
+            
+            // Check if we're in edit mode (WYSIWYG) or code mode
+            const isEditMode = document.getElementById('contentPreview').contentEditable === 'true';
+            
+            if (isEditMode) {
+                // Get content from WYSIWYG editor
+                const bodyContent = document.getElementById('contentPreview').innerHTML;
+                // Reconstruct full HTML with body content
+                newContent = reconstructFullHTML(bodyContent);
+            } else {
+                // Get content from code editor
+                newContent = document.getElementById('contentEditor').value;
+            }
+
             const commitMessage = `Update ${currentFile} via web editor`;
 
             try {
@@ -749,6 +988,24 @@
             } catch (error) {
                 showStatus('Failed to save changes: ' + error.message, 'error');
             }
+        }
+
+        // Reconstruct full HTML from body content
+        function reconstructFullHTML(bodyContent) {
+            const parser = new DOMParser();
+            const originalDoc = parser.parseFromString(originalContent, 'text/html');
+            
+            // Create new document structure
+            const newDoc = document.implementation.createHTMLDocument();
+            
+            // Copy head content
+            newDoc.head.innerHTML = originalDoc.head.innerHTML;
+            
+            // Set body content
+            newDoc.body.innerHTML = bodyContent;
+            
+            // Return the full HTML
+            return newDoc.documentElement.outerHTML;
         }
 
         // Show status messages
@@ -811,6 +1068,26 @@
                     }, 1500);
                 })
                 .catch(() => alert('Copy failed. Please try again.'));
+        }
+
+        // Clear form logic
+        function ngClear() {
+            // Clear all form fields
+            document.getElementById('ng-ad').value = '';
+            document.getElementById('ng-lptp').value = '';
+            document.getElementById('ng-rfd').value = '';
+            document.getElementById('ng-payment').value = '';
+            document.getElementById('ng-notes').value = '';
+            
+            // Show feedback
+            const btn = document.querySelector('.ng-clear-btn');
+            const orig = btn.textContent;
+            btn.textContent = 'Cleared!';
+            btn.style.background = '#28a745';
+            setTimeout(()=>{
+                btn.textContent = orig;
+                btn.style.background = '#6c757d';
+            }, 1500);
         }
     </script>
     <script src="script.js"></script>
