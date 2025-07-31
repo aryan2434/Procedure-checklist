@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procedure Checklist</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./checklist.png">
-</head>
-<body>
+</head><body>
     <header class="header-bar">
         <div class="logo-title">
             <img src="./image.png" alt="Affirm Logo" class="affirm-logo">
@@ -70,7 +67,7 @@
                             <textarea id="contentEditor" placeholder="Content will load here..."></textarea>
                         </div>
                         <div class="preview-panel">
-                            <h4>Live Preview & Editor</h4>
+                            <h4>Live Preview &amp; Editor</h4>
                             <div class="preview-toolbar" id="previewToolbar" style="display: none;">
                                 <button onclick="formatText('bold')" title="Bold"><strong>B</strong></button>
                                 <button onclick="formatText('italic')" title="Italic"><em>I</em></button>
@@ -102,14 +99,14 @@
             <div class="notes-generator-compact">
                 <div class="ng-title" onclick="toggleNotesGenerator(event)" style="cursor:pointer;display:flex;align-items:center;gap:10px;">
                     <span style="font-size:1.2em;font-weight:600;color:#1a3a5d;">Collections Notes Generator</span>
-                    <span id="ng-arrow" style="font-size:1.2em;transition:transform 0.2s;">▼</span>
+                    <span id="ng-arrow" style="font-size: 1.2em; transition: transform 0.2s; transform: rotate(180deg);">▼</span>
                 </div>
-                <div id="ng-content" style="display:none;">
+                <div id="ng-content" style="display: block;">
                     <form id="ng-form" style="display:flex;flex-direction:column;gap:8px;max-width:380px;">
                         <div style="display:flex;align-items:center;gap:8px;">
                             <label for="ng-ad" style="font-weight:500;width:140px;font-size:0.95em;">AD</label>
                             <select id="ng-ad" class="ng-select" style="flex:1;">
-                                <option value="" selected></option>
+                                <option value="" selected=""></option>
                                 <option>Already paid</option>
                                 <option>Pay by phone</option>
                                 <option>Future pay</option>
@@ -143,7 +140,7 @@
                         <div style="display:flex;align-items:center;gap:8px;">
                             <label for="ng-lptp" style="font-weight:500;width:140px;font-size:0.95em;">LPTP</label>
                             <select id="ng-lptp" class="ng-select" style="flex:1;">
-                                <option value="" selected></option>
+                                <option value="" selected=""></option>
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
@@ -151,7 +148,7 @@
                         <div style="display:flex;align-items:center;gap:8px;">
                             <label for="ng-rfd" style="font-weight:500;width:140px;font-size:0.95em;">RFD</label>
                             <select id="ng-rfd" class="ng-select" style="flex:1;">
-                                <option value="" selected></option>
+                                <option value="" selected=""></option>
                                 <option>Job loss/ reduction in income</option>
                                 <option>Merchant dispute/ return</option>
                                 <option>Unexpected expenses</option>
@@ -196,7 +193,7 @@
             <li><a href="harassment.html">Harassment Procedure</a></li>
             <li><a href="purchase-refund-return.html">Purchase Refund/Return Procedure</a></li>
             <li><a href="merchant-dispute.html">Merchant Dispute Procedure</a></li>
-            <li><a href="customer-refuses-to-pay.html">Customer Refuses to Pay Procedure</a></li>
+            <li><a href="customer-refuses-to-pay.html">Refuses to Pay Procedure</a></li>
             <li><a href="unauthorized-activity.html">Unauthorized Activity Procedure</a></li>
             <li><a href="attorney.html">Attorney Procedure</a></li>
             <li><a href="power-of-attorney.html">Power of Attorney (POA) Procedure</a></li>
@@ -1101,5 +1098,5 @@
         }
     </script>
     <script src="script.js"></script>
-</body>
-</html> 
+
+ </body></html>
